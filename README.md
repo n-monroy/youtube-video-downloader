@@ -12,8 +12,8 @@ This is a simple Python project that allows you to download videos from YouTube.
 
 ## Usage
 
-1. Set the `VIDEO_DIR` variable in the `main.py` script to the directory where you want to save the downloaded videos.
-2. Set the `VIDEO_URL` variable in the `main.py` script to the URL of the YouTube video you want to download.
+1. Set the `path` variable in the `main.py` script to the directory where you want to save the downloaded videos.
+2. Set the `url` variable in the `main.py` script to the URL of the YouTube video you want to download.
 3. Run the `main.py` script with the URL of the YouTube video you want to download as an argument: `python main.py`
 4. The video will be downloaded to the directory you specified.
 
