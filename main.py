@@ -117,7 +117,7 @@ def main():
     # You can pass a URL as a command-line argument:
     #   python main.py "https://www.youtube.com/watch?v=VIDEO_ID"
     # Or change the default URL below.
-    default_url = "https://www.youtube.com/watch?v=iOAvc2HcAwY"
+    default_url = "https://www.youtube.com/watch?v=VIDEO_ID"
     url = sys.argv[1] if len(sys.argv) > 1 else default_url
 
     # Max resolution: "1080", "720", "480", "360", or "best"
