@@ -1,28 +1,74 @@
 # YouTube Video Downloader
 
-This is a simple Python project that allows you to download videos from YouTube.
+A simple Python script to download YouTube videos using [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+
+## Features
+
+- Downloads videos up to 1080p (configurable)
+- Automatically merges separate video and audio streams into a single mp4
+- Displays video metadata (title, channel, duration, views, resolution) before downloading
+- Console progress bar with speed and ETA
+- Accepts a URL as a command-line argument or via the default in the script
+- Embeds metadata tags into the downloaded file (requires ffmpeg)
+
+## Prerequisites
+
+- **Python 3.8+**
+- **ffmpeg** (optional but recommended) — needed to merge high-res video+audio streams and embed metadata.
+  Install on Windows:
+  ```
+  winget install ffmpeg
+  ```
+  On macOS: `brew install ffmpeg` · On Ubuntu/Debian: `sudo apt install ffmpeg`
 
 ## Installation
 
-1. Clone this repository.
-2. Navigate to the project directory.
-3. Create a virtual environment: `python3 -m venv env`
-4. Activate the virtual environment: `source env/bin/activate` (Unix/MacOS) or `.\env\Scripts\activate` (Windows)
-5. Install the required packages: `pip install -r requirements.txt`
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/youtube-downloader.git
+   cd youtube-downloader
+   ```
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   # Windows
+   .venv\Scripts\activate
+   # macOS / Linux
+   source .venv/bin/activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-1. Set the `path` variable in the `main.py` script to the directory where you want to save the downloaded videos.
-2. Set the `url` variable in the `main.py` script to the URL of the YouTube video you want to download.
-3. Run the `main.py` script with the URL of the YouTube video you want to download as an argument: `python main.py`
-4. The video will be downloaded to the directory you specified.
+Pass the YouTube URL as an argument:
+
+```bash
+python main.py "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+Or edit the `default_url` variable inside `main.py` and run without arguments:
+
+```bash
+python main.py
+```
+
+Videos are saved to the `downloads/` folder in the project directory.
+
+### Configuration
+
+Inside `main.py` you can change:
+
+| Variable       | Default  | Description                                       |
+|----------------|----------|---------------------------------------------------|
+| `default_url`  | —        | Fallback URL when no argument is provided         |
+| `resolution`   | `"1080"` | Max resolution (`"1080"`, `"720"`, `"480"`, etc.) |
 
 ## Dependencies
 
-This project uses the following Python libraries:
-
-- `pytube`: for downloading YouTube videos
-- `humanize`: for formatting file sizes and durations
+- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) — YouTube video downloading
 
 ## Contributing
 
